@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <link href="./styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css">
+    <title>Tool generate output</title>
+  </head>
+
+  <body>
+  <div class="file has-name is-boxed">
+    <label class="file-label">
+      <input class="file-input" type="file" name="logFile" id="logFile" onchange="document.getElementById('fileLogName').textContent = this.files[0].name">
+      <span class="file-cta">
+      <span class="file-icon">
+        <i class="fas fa-upload"></i>
+      </span>
+      <span class="file-label">
+        Choose a file log
+      </span>
+    </span>
+      <span class="file-name" id="fileLogName">
+    </span>
+    </label>
+  </div>
+  <div class="file has-name is-boxed">
+    <label class="file-label">
+      <input class="file-input" type="file" name="reportFile" id="reportFile" onchange="document.getElementById('fileReportName').textContent = this.files[0].name">
+      <span class="file-cta">
+      <span class="file-icon">
+        <i class="fas fa-upload"></i>
+      </span>
+      <span class="file-label">
+        Choose a file report
+      </span>
+    </span>
+      <span class="file-name" id="fileReportName">
+    </span>
+    </label>
+  </div>
+
+  <button type="button" onclick="btnGenerate()" id="btnGenerate">Generate</button>
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
+  </body>
+</html>
